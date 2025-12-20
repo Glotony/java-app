@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.app.SecondController"
+      alignment="CENTER"
+      spacing="30"
+      style="-fx-background-color: transparent;">
+
+    <padding>
+        <Insets top="40" right="40" bottom="40" left="40"/>
+    </padding>
+
+    <Label text="You are now on Page 2!"
+           style="-fx-font-size: 28px; -fx-font-weight: bold;"/>
+
+    <Label text="Welcome to the second screen."
+           style="-fx-font-size: 20px;"/>
+
+    <MFXButton text="Go Back to Page 1"
+               buttonType="RAISED"
+               onAction="#goBack"
+               prefWidth="250"
+               prefHeight="50"
+               style="-fx-font-size: 18px;"/>
+</VBox>
