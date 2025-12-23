@@ -1,0 +1,11 @@
+Create N.fxml → copy previous, change labels to "Page N", set correct fx:controller
+Add only the buttons you want → onAction = "#goToX"
+Create NController.java → copy previous, change class name, keep/add the @FXML methods the buttons need
+In the previous page's FXML → add one button "Go to Page N" with onAction="#goToN"
+In the previous page's Controller → add one @FXML method goToN() that loads "/N.fxml"
+
+java --module-path "C:\Program Files\Java\javafx-sdk-25.0.1\lib" --add-modules javafx.controls,javafx.fxml -cp "target\classes;C:\Users\nikam\.m2\repository\io\github\palexdev\materialfx\11.17.0\materialfx-11.17.0.jar;C:\Users\nikam\.m2\repository\io\github\palexdev\mfxcore\11.8.0\mfxcore-11.8.0.jar;C:\Users\nikam\.m2\repository\io\github\palexdev\mfxlocalization\11.1.0\mfxlocalization-11.1.0.jar;C:\Users\nikam\.m2\repository\io\github\palexdev\mfxresources\11.9.1\mfxresources-11.9.1.jar;C:\Users\nikam\.m2\repository\io\github\palexdev\mfxeffects\11.3.0\mfxeffects-11.3.0.jar;C:\Users\nikam\.m2\repository\io\github\palexdev\virtualizedfx\11.9.6\virtualizedfx-11.9.6.jar" com.app.App
+this is run command
+
+ mvn javafx:run    this is for showcases
+mvn compile this is for compilations

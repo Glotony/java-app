@@ -28,4 +28,11 @@
                prefWidth="250"
                prefHeight="50"
                style="-fx-font-size: 18px;"/>
+
+    <MFXButton text="Go to Page 3"
+               buttonType="RAISED"
+               onAction="#goToThird"
+               prefWidth="250"
+               prefHeight="50"
+               style="-fx-font-size: 18px;"/>
 </VBox>

@@ -7,7 +7,7 @@
 
 <VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.app.SecondController"
+      fx:controller="com.app.FourthController"
       alignment="CENTER"
       spacing="30"
       style="-fx-background-color: transparent;">
@@ -16,23 +16,39 @@
         <Insets top="40" right="40" bottom="40" left="40"/>
     </padding>
 
-    <Label text="You are now on Page 2!"
+    <Label text="You are now on Page 4!"
            style="-fx-font-size: 28px; -fx-font-weight: bold;"/>
 
-    <Label text="Welcome to the second screen."
+    <Label text="Welcome to the fourth screen."
            style="-fx-font-size: 20px;"/>
 
-    <MFXButton text="Go Back to Page 1"
-               buttonType="RAISED"
-               onAction="#goBack"
-               prefWidth="250"
-               prefHeight="50"
-               style="-fx-font-size: 18px;"/>
 
-    <MFXButton text="Go to Page 3"
+    <MFXButton text="Go to Page 5"
+               buttonType="RAISED"
+               onAction="#goToFifth"
+    prefWidth="250"
+    prefHeight="50"
+    style="-fx-font-size: 18px;"/>
+
+    <MFXButton text="Back to Page 3"
                buttonType="RAISED"
                onAction="#goToThird"
                prefWidth="250"
                prefHeight="50"
                style="-fx-font-size: 18px;"/>
+
+    <MFXButton text="Back to Page 2"
+               buttonType="RAISED"
+               onAction="#goBackToSecond"
+               prefWidth="250"
+               prefHeight="50"
+               style="-fx-font-size: 18px;"/>
+
+    <MFXButton text="Home (Page 1)"
+               buttonType="RAISED"
+               onAction="#goToMain"
+               prefWidth="250"
+               prefHeight="50"
+               style="-fx-font-size: 18px;"/>
+
 </VBox>
