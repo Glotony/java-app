@@ -1,31 +1,45 @@
 package com.app;
 
+import io.github.palexdev.materialfx.controls.MFXButton;
+import io.github.palexdev.materialfx.controls.MFXPasswordField;
+import io.github.palexdev.materialfx.controls.MFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
+import javafx.scene.control.Alert;
+
+import java.io.IOException;
 
 public class SecondController {
 
     @FXML
-    private void goBack(ActionEvent event) throws Exception {
-        // Load and switch back to main.fxml (Page 1)
-        Parent root = FXMLLoader.load(getClass().getResource("/main.fxml"));
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root, 800, 600);
-        stage.setScene(scene);
-        stage.show();
+    private MFXTextField usernameField;
+
+    @FXML
+    private MFXPasswordField passwordField;
+
+    @FXML
+    private MFXButton loginButton;
+
+    @FXML
+    private void handleLogin(ActionEvent event) throws IOException {
+        String username = usernameField.getText().trim();
+        String password = passwordField.getText();
+
+        // Simple mock login
+        if ("admin".equals(username) && "123".equals(password)) {
+            // Login success → go to main dashboard (third.fxml)
+            SceneManager.switchTo(event, "third.fxml");
+        } else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Login Failed");
+            alert.setHeaderText(null);
+            alert.setContentText("Wrong username or password!\nTry: admin / 123");
+            alert.showAndWait();
+        }
     }
 
     @FXML
-    private void goToThird(ActionEvent event) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/third.fxml"));
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root, 800, 600);
-        stage.setScene(scene);
-        stage.show();
+    private void goBack(ActionEvent event) throws IOException {
+        SceneManager.switchTo(event, "main.fxml");
     }
 }

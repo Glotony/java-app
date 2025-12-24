@@ -9,45 +9,27 @@
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.app.FifthController"
       alignment="CENTER"
-      spacing="30"
-      style="-fx-background-color: transparent;">
+      spacing="20">
 
     <padding>
         <Insets top="40" right="40" bottom="40" left="40"/>
     </padding>
 
-    <Label text="You are now on Page 5!"
+    <Label text="My Profile"
            style="-fx-font-size: 28px; -fx-font-weight: bold;"/>
 
-    <Label text="Welcome to the fifth screen."
-           style="-fx-font-size: 20px;"/>
+    <Label text="Username: admin"
+           style="-fx-font-size: 16px;"/>
+    <Label text="Email: admin@example.com"
+           style="-fx-font-size: 16px;"/>
+    <Label text="Full Name: Admin User"
+           style="-fx-font-size: 16px;"/>
 
-    <MFXButton text="Back to Page 4"
-               buttonType="RAISED"
-               onAction="#goToFourth"
-               prefWidth="250"
-               prefHeight="50"
-               style="-fx-font-size: 18px;"/>
+    <MFXButton text="← Back to Dashboard"
+               onAction="#goBackToMain"
+               prefWidth="200"/>
 
-    <MFXButton text="Back to Page 3"
-               buttonType="RAISED"
-               onAction="#goToThird"
-               prefWidth="250"
-               prefHeight="50"
-               style="-fx-font-size: 18px;"/>
-
-    <MFXButton text="Back to Page 2"
-               buttonType="RAISED"
-               onAction="#goBackToSecond"
-               prefWidth="250"
-               prefHeight="50"
-               style="-fx-font-size: 18px;"/>
-
-    <MFXButton text="Home (Page 1)"
-               buttonType="RAISED"
-               onAction="#goToMain"
-               prefWidth="250"
-               prefHeight="50"
-               style="-fx-font-size: 18px;"/>
-
+    <MFXButton text="Logout"
+               onAction="#handleLogout"
+               prefWidth="200"/>
 </VBox>

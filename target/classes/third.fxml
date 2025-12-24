@@ -16,31 +16,30 @@
         <Insets top="40" right="40" bottom="40" left="40"/>
     </padding>
 
-    <Label text="You are now on Page 3!"
+    <Label text="Main Dashboard"
            style="-fx-font-size: 28px; -fx-font-weight: bold;"/>
 
-    <Label text="Welcome to the third screen."
-           style="-fx-font-size: 20px;"/>
+    <Label text="Welcome! Choose an option below:"
+           style="-fx-font-size: 18px; -fx-text-fill: gray;"/>
 
-    <MFXButton text="Go to Page 4"
+    <MFXButton text="Contact Us"
                buttonType="RAISED"
-               onAction="#goToFourth"
+               onAction="#goToContact"
                prefWidth="250"
                prefHeight="50"
                style="-fx-font-size: 18px;"/>
 
-    <MFXButton text="Back to Page 2"
+    <MFXButton text="My Profile"
                buttonType="RAISED"
-               onAction="#goBackToSecond"
+               onAction="#goToProfile"
                prefWidth="250"
                prefHeight="50"
                style="-fx-font-size: 18px;"/>
 
-    <MFXButton text="Home (Page 1)"
+    <MFXButton text="Logout"
                buttonType="RAISED"
-               onAction="#goToMain"
+               onAction="#handleLogout"
                prefWidth="250"
                prefHeight="50"
                style="-fx-font-size: 18px;"/>
-
 </VBox>
