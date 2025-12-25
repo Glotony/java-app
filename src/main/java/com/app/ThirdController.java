@@ -6,7 +6,8 @@ import java.io.IOException;
 
 public class ThirdController {
 
-    // This is now your MAIN DASHBOARD after login
+    // MAIN DASHBOARD after login
+
     @FXML
     private void goToContact(ActionEvent event) throws IOException {
         SceneManager.switchTo(event, "fourth.fxml");
@@ -19,19 +20,6 @@ public class ThirdController {
 
     @FXML
     private void handleLogout(ActionEvent event) throws IOException {
-        SceneManager.switchTo(event, "second.fxml"); // Back to login
+        SceneManager.switchTo(event, "second.fxml");
     }
-
-    // Remove or comment out old methods:
-    /*
-    @FXML
-    private void goBackToSecond(ActionEvent event) throws IOException {
-        // No longer needed - second is login now
-    }
-
-    @FXML
-    private void goToMain(ActionEvent event) throws IOException {
-        // No longer needed - main is welcome
-    }
-    */
 }

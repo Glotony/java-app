@@ -1,7 +1,9 @@
-com\app\FifthController.class
-com\app\ThirdController.class
 com\app\MainController.class
-com\app\App.class
+com\app\User.class
 com\app\SceneManager.class
 com\app\FourthController.class
 com\app\SecondController.class
+com\app\DBHelper.class
+com\app\FifthController.class
+com\app\ThirdController.class
+com\app\App.class
