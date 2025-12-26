@@ -3,7 +3,7 @@
 /out/
 /build/
 
-# IDE files
+# IDE
 .idea/
 *.iml
 .project
@@ -18,6 +18,6 @@
 .DS_Store
 Thumbs.db
 
-# Internal config / helper files
+# Internal / helper files
 src/main/java/com/app/DBHelper.java
-lecture 4/rule.txt
+src/lecture 4/
