@@ -1,0 +1,23 @@
+# Build output
+/target/
+/out/
+/build/
+
+# IntelliJ
+.idea/
+*.iml
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# VS Code
+.vscode/
+
+# Logs
+*.log
+
+# OS trash
+.DS_Store
+Thumbs.db
