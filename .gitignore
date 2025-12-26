@@ -3,16 +3,12 @@
 /out/
 /build/
 
-# IntelliJ
+# IDE files
 .idea/
 *.iml
-
-# Eclipse
 .project
 .classpath
 .settings/
-
-# VS Code
 .vscode/
 
 # Logs
@@ -22,8 +18,6 @@
 .DS_Store
 Thumbs.db
 
-DBHelper.java
-src/main/java/com/example/db/DBHelper.java
-package com.example.db;
-
-rule.txt
+# Internal config / helper files
+src/main/java/com/app/DBHelper.java
+lecture 4/rule.txt
