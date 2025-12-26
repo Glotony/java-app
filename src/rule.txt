@@ -9,3 +9,6 @@ this is run command
 
  mvn javafx:run    this is for showcases
 mvn compile this is for compilations
+
+add registation which will create user afther ending of registery --- tomorrow (done -- 26.12.2025)
+detail up personal page and make it actual form of personal page ---- tomorrow

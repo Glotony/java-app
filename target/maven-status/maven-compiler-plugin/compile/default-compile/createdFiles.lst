@@ -7,3 +7,4 @@ com\app\DBHelper.class
 com\app\FifthController.class
 com\app\ThirdController.class
 com\app\App.class
+com\app\RegisterController.class

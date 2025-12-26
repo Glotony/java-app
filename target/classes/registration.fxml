@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.VBox?>
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import io.github.palexdev.materialfx.controls.MFXPasswordField?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.app.RegisterController"
+      alignment="CENTER"
+      spacing="15"
+      style="-fx-background-color: transparent;">
+
+    <padding>
+        <Insets top="50" right="50" bottom="50" left="50"/>
+    </padding>
+
+    <Label text="Register New User"
+           style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+
+    <MFXTextField fx:id="usernameField" floatingText="Username" prefWidth="300"/>
+    <MFXPasswordField fx:id="passwordField" floatingText="Password" prefWidth="300"/>
+    <MFXTextField fx:id="fullNameField" floatingText="Full Name" prefWidth="300"/>
+    <MFXTextField fx:id="emailField" floatingText="Email" prefWidth="300"/>
+
+    <MFXButton fx:id="registerBtn"
+               text="Register"
+               buttonType="RAISED"
+               prefWidth="300"
+               prefHeight="50"/>
+
+</VBox>
