@@ -21,3 +21,7 @@
 # OS trash
 .DS_Store
 Thumbs.db
+
+DBHelper.java
+src/main/java/com/example/db/DBHelper.java
+package com.example.db;
