@@ -18,12 +18,9 @@
     <Label text="My Profile"
            style="-fx-font-size: 28px; -fx-font-weight: bold;"/>
 
-    <Label text="Username: admin"
-           style="-fx-font-size: 16px;"/>
-    <Label text="Email: admin@example.com"
-           style="-fx-font-size: 16px;"/>
-    <Label text="Full Name: Admin User"
-           style="-fx-font-size: 16px;"/>
+    <Label fx:id="usernameLabel" style="-fx-font-size: 16px;"/>
+    <Label fx:id="emailLabel" style="-fx-font-size: 16px;"/>
+    <Label fx:id="fullNameLabel" style="-fx-font-size: 16px;"/>
 
     <MFXButton text="← Back to Dashboard"
                onAction="#goBackToMain"
@@ -32,4 +29,5 @@
     <MFXButton text="Logout"
                onAction="#handleLogout"
                prefWidth="200"/>
+
 </VBox>

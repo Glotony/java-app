@@ -27,8 +27,14 @@ public class SecondController {
         String username = usernameField.getText().trim();
         String password = passwordField.getText();
 
-        if (DBHelper.getUser(username, password) != null) {
-            // Login successful → go to dashboard (third.fxml)
+        // get user from DB
+        User user = DBHelper.getUser(username, password); // must return User object, not null
+
+        if (user != null) {
+            // ✅ set session
+            UserSession.setUser(user);
+
+            // ✅ go to dashboard
             SceneManager.switchTo(event, "third.fxml");
         } else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
