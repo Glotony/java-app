@@ -8,12 +8,16 @@
     <groupId>com.app</groupId>
     <artifactId>modern-javafx-app</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>Modern JavaFX App</name>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <javafx.version>25</javafx.version>
+        <main.class>com.app.App</main.class>
     </properties>
 
     <dependencies>
@@ -40,19 +44,85 @@
         <dependency>
             <groupId>com.mysql</groupId>
             <artifactId>mysql-connector-j</artifactId>
-            <version>8.0.33</version>
+            <version>9.5.0</version>
         </dependency>
     </dependencies>
 
     <build>
         <plugins>
+            <!-- Run with mvn javafx:run -->
             <plugin>
                 <groupId>org.openjfx</groupId>
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>0.0.8</version>
                 <configuration>
-                    <mainClass>com.app.App</mainClass>
+                    <mainClass>${main.class}</mainClass>
                 </configuration>
+            </plugin>
+
+            <!-- Create fat JAR with all dependencies -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>3.6.0</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>${main.class}</mainClass>
+                        </manifest>
+                    </archive>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- Launch4j: create double-clickable .exe using system Java + correct JavaFX flags -->
+            <plugin>
+                <groupId>com.akathist.maven.plugins.launch4j</groupId>
+                <artifactId>launch4j-maven-plugin</artifactId>
+                <version>2.3.0</version>
+                <executions>
+                    <execution>
+                        <id>l4j-gui</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>launch4j</goal>
+                        </goals>
+                        <configuration>
+                            <headerType>gui</headerType>
+                            <outfile>target/ModernJavaFXApp.exe</outfile>
+                            <jar>target/modern-javafx-app-1.0-SNAPSHOT-jar-with-dependencies.jar</jar>
+                            <dontWrapJar>false</dontWrapJar>
+                            <errTitle>Modern JavaFX App Error</errTitle>
+                            <cmdLine>--module-path "%USERPROFILE%\.m2\repository\org\openjfx\javafx-base\25;%USERPROFILE%\.m2\repository\org\openjfx\javafx-graphics\25;%USERPROFILE%\.m2\repository\org\openjfx\javafx-controls\25;%USERPROFILE%\.m2\repository\org\openjfx\javafx-fxml\25" --add-modules javafx.base,javafx.graphics,javafx.controls,javafx.fxml --enable-native-access=javafx.base,javafx.graphics,javafx.controls,javafx.fxml</cmdLine>                            <classPath>
+                                <mainClass>com.app.App</mainClass>
+                            </classPath>
+                            <jre>
+                                <minVersion>17.0.0</minVersion>
+                                <path>%PATH%;%JAVA_HOME%</path>
+                            </jre>
+                            <versionInfo>
+                                <fileVersion>1.0.0.0</fileVersion>
+                                <productVersion>1.0.0.0</productVersion>
+                                <fileDescription>Modern JavaFX Desktop App</fileDescription>
+                                <productName>Modern JavaFX App</productName>
+                                <copyright>Glotony</copyright>
+                                <internalName>ModernJavaFXApp</internalName>
+                                <originalFilename>ModernJavaFXApp.exe</originalFilename>
+                            </versionInfo>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
