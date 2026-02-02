@@ -36,6 +36,15 @@
                prefHeight="50"
                style="-fx-font-size: 18px;"/>
 
+
+    <MFXButton text="Products"
+               buttonType="RAISED"
+               onAction="#goToProducts"
+               prefWidth="250"
+               prefHeight="50"
+               style="-fx-font-size: 18px;"/>
+
+
     <MFXButton text="Logout"
                buttonType="RAISED"
                onAction="#handleLogout"

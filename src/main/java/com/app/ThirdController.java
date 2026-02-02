@@ -18,8 +18,16 @@ public class ThirdController {
         SceneManager.switchTo(event, "fifth.fxml");
     }
 
+
+    @FXML
+    private void goToProducts(ActionEvent event) throws IOException {
+        // optional, if you later want Products button to work
+        SceneManager.switchTo(event, "products.fxml");
+    }
+
     @FXML
     private void handleLogout(ActionEvent event) throws IOException {
         SceneManager.switchTo(event, "second.fxml");
     }
+
 }

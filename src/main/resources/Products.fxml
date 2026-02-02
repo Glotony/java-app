@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.event.ActionEvent.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.app.ProductsController">
+
+    <children>
+        <VBox spacing="15"
+              AnchorPane.topAnchor="20"
+              AnchorPane.leftAnchor="20"
+              AnchorPane.rightAnchor="20"
+              AnchorPane.bottomAnchor="20">
+
+            <!-- Title -->
+            <Label text="Products"
+                   style="-fx-font-size: 22px; -fx-font-weight: bold;" />
+
+            <!-- Products table -->
+            <TableView fx:id="productsTable" prefHeight="400">
+
+                <columns>
+                    <TableColumn fx:id="nameCol" text="Name" prefWidth="200"/>
+                    <TableColumn fx:id="priceCol" text="Price" prefWidth="100"/>
+                    <TableColumn fx:id="stockCol" text="Stock" prefWidth="100"/>
+                </columns>
+
+            </TableView>
+
+            <!-- Buttons -->
+            <HBox spacing="10">
+                <Button text="Add Product" onAction="#addProduct"/>
+                <Button text="Remove Selected" onAction="#removeProduct"/>
+                <Button text="Back" onAction="#goBack"/>
+            </HBox>
+
+        </VBox>
+    </children>
+
+</AnchorPane>
