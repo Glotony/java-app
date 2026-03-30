@@ -1,5 +1,6 @@
 package com.app;
 
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
@@ -8,17 +9,10 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 public class ProductsController {
 
-    @FXML
-    private TableView<Product> productsTable;
-
-    @FXML
-    private TableColumn<Product, String> nameCol;
-
-    @FXML
-    private TableColumn<Product, Double> priceCol;
-
-    @FXML
-    private TableColumn<Product, Integer> stockCol;
+    @FXML private TableView<Product> productsTable;
+    @FXML private TableColumn<Product, String> nameCol;
+    @FXML private TableColumn<Product, Double> priceCol;
+    @FXML private TableColumn<Product, Integer> stockCol;
 
     @FXML
     public void initialize() {
@@ -26,23 +20,29 @@ public class ProductsController {
         priceCol.setCellValueFactory(new PropertyValueFactory<>("price"));
         stockCol.setCellValueFactory(new PropertyValueFactory<>("stock"));
 
-        // load products from DbHelper
-        productsTable.setItems(ProductsDbHelper.getProducts());
+        loadProducts();
+    }
+
+    private void loadProducts() {
+        ObservableList<Product> products = DBHelper.getProducts();
+        productsTable.setItems(products);
     }
 
     @FXML
     public void addProduct(ActionEvent event) {
-        Product newProduct = new Product("New Product", 0.0, 1);
-        ProductsDbHelper.addProduct(newProduct);
-        productsTable.refresh();
+        Product newProduct = new Product("New Product", 99.99, 10);   // You can change default values
+        DBHelper.addProduct(newProduct);
+        loadProducts();        // Refresh table
     }
 
     @FXML
     public void removeProduct(ActionEvent event) {
         Product selected = productsTable.getSelectionModel().getSelectedItem();
         if (selected != null) {
-            ProductsDbHelper.removeProduct(selected);
-            productsTable.refresh();
+            DBHelper.removeProduct(selected);
+            loadProducts();
+        } else {
+            System.out.println("No product selected to remove.");
         }
     }
 
